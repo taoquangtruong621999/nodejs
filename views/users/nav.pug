@@ -1,0 +1,28 @@
+html
+  head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(rel="stylesheet", href="/styles/custom.css")
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+body
+nav.navbar.navbar-expand-sm.navbar-light.bg-light
+  a.navbar-brand(href='#') TodosApp
+  button.navbar-toggler.d-lg-none(type='button', data-toggle='collapse', data-target='#collapsibleNavId', aria-controls='collapsibleNavId', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #collapsibleNavId.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      li.nav-item.active
+        a.nav-link(href='/users')
+          | Home 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='/todos') TaskManager
+      li.nav-item.dropdown
+        a#dropdownId.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+        .dropdown-menu(aria-labelledby='dropdownId')
+          a.dropdown-item(href='#') Action 1
+          a.dropdown-item(href='#') Action 2   
+  if user  
+    p=user.name
+    block content
+
