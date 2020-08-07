@@ -4,12 +4,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var authMiddleware=require('./middlewares/auth.middleware.js');
+var authMiddleware = require('./middlewares/auth.middleware.js');
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/auth');
+var productRouter = require('./routes/product');
 
 
 var app = express();
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', authMiddleware.requireAuth, usersRouter);
 app.use('/auth', loginRouter);
+app.use('/product', productRouter);
 
 
 // catch 404 and forward to error handler
