@@ -12,13 +12,16 @@ if errors
       .alert.alert-danger= error
 .row.p-3
   .col-4.border.border-primary.rounded.mt-2.p-3
-    form(action='/users/create', method='POST')
+    form(action='/users/create', method='POST',enctype="multipart/form-data")
       .form-group
         label(for='name') Name
         input#exampleInputEmail1.form-control(type='name', value=values ? values.name : "", aria-describedby='emailHelp', name='name')
       .form-group
         label(for='phone') Phone
         input#exampleInputPassword1.form-control(type='phone', name='phone',value=values ? values.phone : "")
+      .form-group
+        label(for="avatar") Avatar
+        input#avatar.form-control-file(name="avatar", type="file")
       button.btn.btn-primary(type='submit') Submit
 
 

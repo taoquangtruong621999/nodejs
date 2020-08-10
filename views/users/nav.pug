@@ -16,12 +16,9 @@ nav.navbar.navbar-expand-sm.navbar-light.bg-light
           | Home 
           span.sr-only (current)
       li.nav-item
-        a.nav-link(href='/todos') TaskManager
+        a.nav-link(href='/product') Products  
       li.nav-item.dropdown
-        a#dropdownId.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
-        .dropdown-menu(aria-labelledby='dropdownId')
-          a.dropdown-item(href='#') Action 1
-          a.dropdown-item(href='#') Action 2   
+        a.nav-link(href='/product') Cart  
   if user  
     p=user.name
     block content

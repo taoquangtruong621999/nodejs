@@ -1,3 +1,6 @@
 {
-    "ignore": ["db.json"]
+    "ignore": ["db.json"],
+    "events": {
+        "crash": "sh -c 'lsof -i :${PORT:-3000} -t | xargs kill'"
+    }
 }
